@@ -15,7 +15,6 @@ class App extends React.Component {
 	}
 
 	setModalShow(value, whoami) {
-		// this.props.abcd = whoami;
 		this.setState({
 			modalShow: value,
 			whoami: whoami
@@ -30,14 +29,11 @@ class App extends React.Component {
 						<button onClick={() => this.setModalShow(true, "Vendor")} className="spnd-btn" who="Vendor">Vendor</button>
 						<button onClick={() => this.setModalShow(true, "Client")} className="spnd-btn" who="Client">Client</button>
 					</div>
-
-					{/* login form modal */}
 					<MyVerticallyCenteredModal
 						show={this.state.modalShow}
 						onHide={() => this.setModalShow(false)}
 						whoami={this.state.whoami}
 					/>
-					{/* login form modal */}
 				</header>
 			</div>
 		);
