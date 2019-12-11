@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default class VendorPage extends React.Component {
+export default class VendorRPFGenerator extends React.Component {
     constructor(props) {
         super(props);
         this.state = {};
@@ -8,7 +8,7 @@ export default class VendorPage extends React.Component {
 
     render() {
         return (
-            <h1>Welcome to Vendor Page....</h1>
+            <h1>Welcome to Client Page....</h1>
         )
     }
 }

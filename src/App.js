@@ -2,17 +2,17 @@ import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Router, Route, Switch } from 'react-router-dom'
-import VendorPage from './components/VendorPage'
+import VendorPage from './components/vendor/VendorPage'
 import MainPage from './components/MainPage';
-import ClientPage from './components/ClientPage';
-import history from './services/history'
+import ClientPage from './components/client/ClientPage';
+import APP_CONFIG from './services/util';
 
 
 class App extends React.Component {
 
 	render() {
 		return (
-			<Router history={history}>
+			<Router history={APP_CONFIG.history}>
 				<div className="App">
 					<header className="App-header">
 						<Switch>

@@ -3,7 +3,7 @@ import { Modal, Button, Form, Row, Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faKey } from '@fortawesome/free-solid-svg-icons'
 import axios from 'axios';
-import history from '../services/history';
+import APP_CONFIG from '../services/util';
 
 export default class MyVerticallyCenteredModal extends React.Component {
 
@@ -14,9 +14,9 @@ export default class MyVerticallyCenteredModal extends React.Component {
 
     loginUser = () => {
         if (this.props.whoami && this.props.whoami.trim().toLowerCase() === 'client')
-            history.push('/client')
+            APP_CONFIG.history.push('/client')
         else if (this.props.whoami && this.props.whoami.trim().toLowerCase() === 'vendor')
-            history.push('/vendor')
+            APP_CONFIG.history.push('/vendor')
         else
             console.log(`how did a wrong parameter came ? Parameter being checked -> ${this.props.whoami}`);
         axios.get(`http://127.0.0.1:5000/vendor/`)
