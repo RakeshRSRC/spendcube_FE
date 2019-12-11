@@ -1,41 +1,28 @@
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import MyVerticallyCenteredModal from './components/LoginModal'
+import { Router, Route, Switch } from 'react-router-dom'
+import VendorPage from './components/VendorPage'
+import MainPage from './components/MainPage';
+import ClientPage from './components/ClientPage';
+import history from './services/history'
 
 
 class App extends React.Component {
 
-	constructor(props) {
-		super(props);
-		this.state = {
-			modalShow: false,
-			whoami: ''
-		};
-	}
-
-	setModalShow(value, whoami) {
-		this.setState({
-			modalShow: value,
-			whoami: whoami
-		})
-	}
-
 	render() {
 		return (
-			<div className="App">
-				<header className="App-header">
-					<div>
-						<button onClick={() => this.setModalShow(true, "Vendor")} className="spnd-btn" who="Vendor">Vendor</button>
-						<button onClick={() => this.setModalShow(true, "Client")} className="spnd-btn" who="Client">Client</button>
-					</div>
-					<MyVerticallyCenteredModal
-						show={this.state.modalShow}
-						onHide={() => this.setModalShow(false)}
-						whoami={this.state.whoami}
-					/>
-				</header>
-			</div>
+			<Router history={history}>
+				<div className="App">
+					<header className="App-header">
+						<Switch>
+							<Route exact path='/' component={MainPage}></Route>
+							<Route exact path='/vendor' component={VendorPage}></Route>
+							<Route exact path='/client' component={ClientPage}></Route>
+						</Switch>
+					</header>
+				</div>
+			</Router>
 		);
 	}
 }
