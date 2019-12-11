@@ -7,8 +7,8 @@ export default class ClientPage extends React.Component {
     }
 
     render() {
-        return ( <
-            h1 > Welcome to Client Page.... < /h1>
+        return (
+            <h1> Welcome to Client Page.... </h1>
         )
     }
 }
