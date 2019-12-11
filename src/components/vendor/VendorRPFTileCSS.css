@@ -1,0 +1,141 @@
+.rpf-tile-container {
+    background: #ffffff73;
+    padding: 20px 30px;
+    border-radius: 30px;
+    margin-bottom: 30px;
+}
+
+.rpf-tile {
+    background: linear-gradient(to right, #355c7d66, #6c5b7b4a, #c06c8438);
+    padding: 20px 30px;
+    border-radius: 30px;
+    position: relative;
+    height: 200px;
+    margin: 10px 0px 100px 0px;
+}
+
+.vendor-rpf-drpdwn {
+    display: inline-block;
+    width: 300px;
+    margin: 5px 20px;
+}
+
+.vendor-rpf-drpdwn .Dropdown-control {
+    height: 40px;
+    padding: 6px 0px;
+    font-size: 19px;
+    border-radius: 10px;
+    transition: all .3s ease-in-out;
+}
+
+.vendor-rpf-drpdwn .Dropdown-menu {
+    font-size: 19px;
+}
+
+.vendor-rpf-drpdwn .Dropdown-control .Dropdown-arrow {
+    top: 50%;
+}
+
+.rpf-tile-drpdwn {
+    width: 1000px;
+}
+
+.rpf-tile-foot-btn,
+.rpf-tile-foot-btn:active {
+    width: 220px;
+    display: inline-block;
+    font-size: 19px;
+    letter-spacing: 1.4px;
+    height: 40px;
+    margin: 5px 40px;
+    transition: all .3s ease-in-out;
+    background-color: #c5c5c5;
+    background: 0 0!important;
+    border: 1px solid #fff !important;
+    position: absolute;
+    bottom: -20px;
+    padding: 0px;
+    box-shadow: 5px 8px 15px rgba(0, 0, 0, 0.43);
+    border-radius: 20px;
+}
+
+.rpf-tile-foot-btn:hover,
+.rpf-tile-add-btn:hover,
+.add-more-rpf-btn:hover {
+    background: #355c7d9e !important;
+    color: #ffff;
+    border: 0.5px solid #fff !important;
+    letter-spacing: 1.8px;
+}
+
+.rpf-tile-del-icn {
+    position: absolute;
+    top: 42%;
+    right: 10px;
+    color: #ff0000bf;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.2s ease-in-out;
+}
+
+.rpf-tile-del-icn:hover {
+    top: 41%;
+    right: 9px;
+    font-size: 22px;
+}
+
+.rpf-tile-add-btn {
+    width: 110px;
+    display: inline-block;
+    font-size: 13px;
+    text-transform: uppercase;
+    height: 35px;
+    margin: 20px 30px;
+    letter-spacing: 1.4px;
+    text-align: center;
+    transition: all .3s ease-in-out;
+    background-color: #c5c5c5;
+    background: 0 0!important;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 0px;
+    border-radius: 20px;
+    box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.31);
+}
+
+.rpf-tile-foot-btn.first-btn {
+    left: 100px;
+}
+
+.rpf-tile-foot-btn.second-btn {
+    right: 100px;
+}
+
+.rpf-tile-incoterm-section {
+    width: 100%;
+    max-height: 100px;
+    overflow-y: scroll;
+}
+
+.rfp-container {
+    margin: 100px 0px;
+}
+
+.add-more-rpf-btn {
+    width: 180px;
+    display: inline-block;
+    font-size: 16px;
+    text-transform: uppercase;
+    height: 35px;
+    margin: 20px 30px;
+    letter-spacing: 1.4px;
+    text-align: center;
+    transition: all .3s ease-in-out;
+    background-color: #c5c5c5;
+    background: 0 0!important;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 0px;
+    border-radius: 20px;
+    box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.31);
+}

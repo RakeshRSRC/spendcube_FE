@@ -1,7 +1,9 @@
 import React from 'react';
 import axios from 'axios';
+import './VendorRPFTileCSS.css'
 import APP_CONFIG from '../../services/util';
-import VendorRPFGenerator from './VendorRPFGenerator';
+import VendorRPFTile from './VendorRPFTile';
+import { Button } from 'react-bootstrap';
 
 export default class VendorPage extends React.Component {
     constructor(props) {
@@ -38,23 +40,48 @@ export default class VendorPage extends React.Component {
     componentDidMount = () => {
         Promise.all([this.getClientIncoterms(), this.getClientProductCategories(), this.getClientLocations()])
             .then(([incoterms, productCategories, locations]) => {
-                console.log('incoterms');
-                console.log(incoterms);
-                console.log('productCategories');
-                console.log(productCategories);
-                console.log('locations');
-                console.log(locations);
                 this.setState({
                     showDetails: false,
-                    incoterms: incoterms,
-                    productCategories: productCategories,
-                    locations: locations
+                    incoterms: incoterms.data,
+                    productCategories: productCategories.data,
+                    locations: locations.data
                 });
             });
     }
 
+    processIncotermForDrpDowns = (incotermsOpt) => {
+        return incotermsOpt.map(function (ic) {
+            return { value: ic.incoterm_id, label: ic.incoterm_name };
+        });
+    }
+
+    processCategoryForDrpDowns = (categoryOpt) => {
+        return categoryOpt.map(function (ic) {
+            return { value: ic.category_id, label: ic.category_name };
+        });
+    }
+
+    processLocationForDrpDowns = (locationOpt) => {
+        return locationOpt.map(function (ic) {
+            return { value: ic.location_id, label: ic.location_name };
+        });
+    }
+
     render() {
-        const whatToShow = this.state.showDetails ? APP_CONFIG.globalSpinner : <VendorRPFGenerator></VendorRPFGenerator>;
+        const incotermsOpt = this.processIncotermForDrpDowns(this.state.incoterms);
+        const productCategoriesOpt = this.processCategoryForDrpDowns(this.state.productCategories);
+        const locationsOpt = this.processLocationForDrpDowns(this.state.locations);
+        const rpfView = <div className="rfp-container">
+                            <div className="rpf-tile-container">
+                                {<VendorRPFTile 
+                                    incoterms={incotermsOpt} 
+                                    productCategories={productCategoriesOpt} 
+                                    locations={locationsOpt} >
+                                </VendorRPFTile>}
+                                <Button className="add-more-rpf-btn" >+Add More RPF</Button>
+                            </div>
+                        </div>
+        const whatToShow = this.state.showDetails ? APP_CONFIG.globalSpinner : rpfView;
         return (whatToShow);
     }
 }
