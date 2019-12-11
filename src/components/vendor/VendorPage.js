@@ -9,6 +9,7 @@ export default class VendorPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            rfpCount:[1],
             showDetails: true,
             incoterms: [],
             productCategories: [],
@@ -67,20 +68,32 @@ export default class VendorPage extends React.Component {
         });
     }
 
+    addMoreRfp = () => {
+        let cur_arr = this.state.rfpCount;
+        cur_arr.push(1);
+        this.setState({
+            rfpCount: cur_arr
+        })
+    }
+
     render() {
         const incotermsOpt = this.processIncotermForDrpDowns(this.state.incoterms);
         const productCategoriesOpt = this.processCategoryForDrpDowns(this.state.productCategories);
         const locationsOpt = this.processLocationForDrpDowns(this.state.locations);
         const rpfView = <div className="rfp-container">
-                            <div className="rpf-tile-container">
-                                {<VendorRPFTile 
-                                    incoterms={incotermsOpt} 
-                                    productCategories={productCategoriesOpt} 
+            <div className="rpf-tile-container">
+                {
+                    this.state.rfpCount.map((x, index)=>{
+                        return <VendorRPFTile
+                                    incoterms={incotermsOpt}
+                                    productCategories={productCategoriesOpt}
                                     locations={locationsOpt} >
-                                </VendorRPFTile>}
-                                <Button className="add-more-rpf-btn" >+Add More RPF</Button>
-                            </div>
-                        </div>
+                                </VendorRPFTile>
+                    })
+                }
+                <Button className="add-more-rpf-btn" onClick={this.addMoreRfp} >+Add More RPF</Button>
+            </div>
+        </div>
         const whatToShow = this.state.showDetails ? APP_CONFIG.globalSpinner : rpfView;
         return (whatToShow);
     }
