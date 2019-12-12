@@ -14,9 +14,9 @@
 }
 
 .App-header {
-    background: #355c7d;
-    background: -webkit-linear-gradient(to right, #355c7d, #6c5b7b, #c06c84);
-    background: linear-gradient(to right, #355c7d, #6c5b7b, #c06c84);
+    background: #355c7dd6;
+    background: -webkit-linear-gradient(to right, #355c7dd6, #6c5b7bde, #c06c84bf);
+    background: linear-gradient(to right, #355c7dd6, #6c5b7bde, #c06c84bf);
     min-height: 100vh;
     display: flex;
     flex-direction: column;

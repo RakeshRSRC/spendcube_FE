@@ -1,0 +1,9 @@
+.client-tab-container {
+    width: 98vw;
+    height: 95vh;
+    text-align: left;
+}
+
+.client-tab-container li.react-tabs__tab {
+    margin: 0px 20px;
+}
