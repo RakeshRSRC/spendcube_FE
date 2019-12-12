@@ -22,7 +22,7 @@ export default class MyVerticallyCenteredModal extends React.Component {
         axios.get(`http://127.0.0.1:5000/vendor/`)
             .then(res => {
                 console.log(res);
-            })
+            });
     }
 
     render() {

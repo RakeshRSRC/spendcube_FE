@@ -76,18 +76,33 @@ export default class VendorPage extends React.Component {
         })
     }
 
+    removeRfp = () =>{
+        let cur_arr = this.state.rfpCount;
+        if (cur_arr.length === 1)
+            return;
+        cur_arr.pop(1);
+        this.setState({
+            rfpCount: cur_arr
+        })
+    }
+
     render() {
         const incotermsOpt = this.processIncotermForDrpDowns(this.state.incoterms);
         const productCategoriesOpt = this.processCategoryForDrpDowns(this.state.productCategories);
         const locationsOpt = this.processLocationForDrpDowns(this.state.locations);
         const rpfView = <div className="rfp-container">
+            <div className="rpf-container-head">
+                <h2>RPF Generator</h2>
+            </div>
             <div className="rpf-tile-container">
                 {
                     this.state.rfpCount.map((x, index)=>{
                         return <VendorRPFTile
+                                    rfpID={`rfp-tile-${index}`}
                                     incoterms={incotermsOpt}
                                     productCategories={productCategoriesOpt}
-                                    locations={locationsOpt} >
+                                    locations={locationsOpt} 
+                                    removeRFPFun = {this.removeRfp}>
                                 </VendorRPFTile>
                     })
                 }
