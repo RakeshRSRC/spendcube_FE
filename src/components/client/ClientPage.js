@@ -20,13 +20,13 @@ export default class ClientPage extends React.Component {
                     <Tab>Incoterm View</Tab>
                 </TabList>
                 <TabPanel>
-                    <h2>Any content 1</h2>
+                    <ProductView></ProductView>
                 </TabPanel>
                 <TabPanel>
                     <h2>Any content 2</h2>
                 </TabPanel>
                 <TabPanel>
-                    <ProductView></ProductView>
+                    <h2>Any content 3</h2>
                 </TabPanel>
                 <TabPanel>
                     <h2>Any content 4</h2>

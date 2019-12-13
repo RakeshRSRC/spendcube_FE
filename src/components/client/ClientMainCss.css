@@ -1,9 +1,24 @@
 .client-tab-container {
-    width: 98vw;
-    height: 95vh;
+    width: 100vw;
+    height: 100vh;
     text-align: left;
 }
 
 .client-tab-container li.react-tabs__tab {
     margin: 0px 20px;
+}
+
+.product-vw-filter-container {
+    margin: 20px 0px;
+}
+
+.product-vw-filter-container .Dropdown-control {
+    width: 150px;
+    height: 40px;
+    font-size: 15px;
+}
+
+.product-vw-filter-container .Dropdown-menu {
+    font-size: 15px;
+    width: 150px;
 }
