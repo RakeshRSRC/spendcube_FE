@@ -5,6 +5,7 @@ import { Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import VendorRegionIncotermRow from './VendorRegionIncotermRow';
+import APP_CONFIG from '../../services/util.js';
 
 export default class VendorRPFTile extends React.Component {
     constructor(props) {
@@ -65,7 +66,7 @@ export default class VendorRPFTile extends React.Component {
                     </div>
                     <Button className="rpf-tile-add-btn" onClick={this.addMoreRegionIncotermRow}  >+Add More</Button>
                 </div>
-                <a href="http://127.0.0.1:5000/vendor/exportRFT" rel="noopener noreferrer" target="_blank">
+                <a href={`${APP_CONFIG.url}/vendor/exportRFT`} rel="noopener noreferrer" target="_blank">
                     <Button className="rpf-tile-foot-btn first-btn" >Generate Template</Button>
                 </a>
                 <Button className="rpf-tile-foot-btn second-btn" >Upload Template</Button>

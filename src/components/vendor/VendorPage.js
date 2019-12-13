@@ -9,7 +9,7 @@ export default class VendorPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            rfpCount: [1],
+            rfpCount:[1],
             showDetails: true,
             incoterms: [],
             productCategories: [],
@@ -51,19 +51,19 @@ export default class VendorPage extends React.Component {
     }
 
     processIncotermForDrpDowns = (incotermsOpt) => {
-        return incotermsOpt.map(function(ic) {
+        return incotermsOpt.map(function (ic) {
             return { value: ic.incoterm_id, label: ic.incoterm_name };
         });
     }
 
     processCategoryForDrpDowns = (categoryOpt) => {
-        return categoryOpt.map(function(ic) {
+        return categoryOpt.map(function (ic) {
             return { value: ic.category_id, label: ic.category_name };
         });
     }
 
     processLocationForDrpDowns = (locationOpt) => {
-        return locationOpt.map(function(ic) {
+        return locationOpt.map(function (ic) {
             return { value: ic.location_id, label: ic.location_name };
         });
     }
@@ -76,7 +76,7 @@ export default class VendorPage extends React.Component {
         })
     }
 
-    removeRfp = () => {
+    removeRfp = () =>{
         let cur_arr = this.state.rfpCount;
         if (cur_arr.length === 1)
             return;
@@ -90,28 +90,25 @@ export default class VendorPage extends React.Component {
         const incotermsOpt = this.processIncotermForDrpDowns(this.state.incoterms);
         const productCategoriesOpt = this.processCategoryForDrpDowns(this.state.productCategories);
         const locationsOpt = this.processLocationForDrpDowns(this.state.locations);
-        const rpfView = < div className = "rfp-container" >
-            <
-            div className = "rpf-container-head" >
-            <
-            h2 > RPF Generator < /h2> <
-            /div> <
-            div className = "rpf-tile-container" > {
-                this.state.rfpCount.map((x, index) => {
-                    return <VendorRPFTile
-                    rfpID = { `rfp-tile-${index}` }
-                    incoterms = { incotermsOpt }
-                    productCategories = { productCategoriesOpt }
-                    locations = { locationsOpt }
-                    removeRFPFun = { this.removeRfp } >
-                        <
-                        /VendorRPFTile>
-                })
-            } <
-            Button className = "add-more-rpf-btn"
-        onClick = { this.addMoreRfp } > +Add More RPF < /Button> <
-            /div> <
-            /div>
+        const rpfView = <div className="rfp-container">
+            <div className="rpf-container-head">
+                <h2>RPF Generator</h2>
+            </div>
+            <div className="rpf-tile-container">
+                {
+                    this.state.rfpCount.map((x, index)=>{
+                        return <VendorRPFTile
+                                    rfpID={`rfp-tile-${index}`}
+                                    incoterms={incotermsOpt}
+                                    productCategories={productCategoriesOpt}
+                                    locations={locationsOpt} 
+                                    removeRFPFun = {this.removeRfp}>
+                                </VendorRPFTile>
+                    })
+                }
+                <Button className="add-more-rpf-btn" onClick={this.addMoreRfp} >+Add More RPF</Button>
+            </div>
+        </div>
         const whatToShow = this.state.showDetails ? APP_CONFIG.globalSpinner : rpfView;
         return (whatToShow);
     }
