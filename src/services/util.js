@@ -14,7 +14,7 @@ const APP_CONFIG = {
     protocol: 'http',
     host: '127.0.0.1',
     port: '8000',
-    url: 'http://127.0.0.1:5000'
+    url: 'http://127.0.0.1:8000'
 };
 
 export default APP_CONFIG;
