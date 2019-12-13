@@ -10,7 +10,11 @@ const spinner = <Spinner animation="border" role="status">
 
 const APP_CONFIG = {
     history: history,
-    globalSpinner: spinner
+    globalSpinner: spinner,
+    protocol: 'http',
+    host: '127.0.0.1',
+    port: '8000',
+    url: 'http://127.0.0.1:5000'
 };
 
 export default APP_CONFIG;

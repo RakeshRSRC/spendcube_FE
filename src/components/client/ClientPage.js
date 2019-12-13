@@ -3,6 +3,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import './ClientMainCss.css';
 import ProductView from './dashboard_view/ProductView';
+import Underconstruction from '../under_construction_page/Underconstruction';
 
 export default class ClientPage extends React.Component {
     constructor(props) {
@@ -23,13 +24,13 @@ export default class ClientPage extends React.Component {
                     <ProductView></ProductView>
                 </TabPanel>
                 <TabPanel>
-                    <h2>Any content 2</h2>
+                    <Underconstruction></Underconstruction>
                 </TabPanel>
                 <TabPanel>
-                    <h2>Any content 3</h2>
+                    <Underconstruction></Underconstruction>
                 </TabPanel>
                 <TabPanel>
-                    <h2>Any content 4</h2>
+                    <Underconstruction></Underconstruction>
                 </TabPanel>
             </Tabs>
         )

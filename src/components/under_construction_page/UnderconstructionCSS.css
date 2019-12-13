@@ -1,0 +1,25 @@
+.under-construction-body {
+    text-align: center;
+    margin: 140px 0px;
+}
+
+.under-construction-icn-1,
+.under-construction-icn-2,
+.under-construction-icn-3 {
+    margin: 5px 50px;
+    -webkit-animation: fa-spin 6s infinite linear;
+    animation: fa-spin 6s infinite linear;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12), 0 3px 5px -1px rgba(0, 0, 0, .2);
+}
+
+.under-construction-icn-1 {
+    font-size: 10em;
+}
+
+.under-construction-icn-2 {
+    font-size: 8em;
+}
+
+.under-construction-icn-3 {
+    font-size: 6em;
+}
