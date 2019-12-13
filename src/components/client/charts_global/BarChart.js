@@ -2,31 +2,7 @@ import { Column } from '@antv/g2plot';
 
 // source URL :  https://g2plot.antv.vision/zh/examples/column/basic
 
-export default function createSingleChart(id, title){
-
-	const data = [
-		{
-			label: 'Vendor A',
-			value: 38,
-		},
-		{
-			label: 'Vendor B',
-			value: 52,
-		},
-		{
-			label: 'Vendor C',
-			value: 61,
-		},
-		{
-			label: 'Vendor D',
-			value: 145,
-		},
-		{
-			label: 'Vendor E',
-			value: 48,
-		}
-	];
-
+export default function createSingleChart(id, title, data) {
 	const columnPlot = new Column(document.getElementById(id), {
 		title: {
 			visible: true,

@@ -6,6 +6,7 @@
 
 .client-tab-container li.react-tabs__tab {
     margin: 0px 20px;
+    font-size: 18px;
 }
 
 .product-vw-filter-container {
